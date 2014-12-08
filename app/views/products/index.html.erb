@@ -1,8 +1,10 @@
 <ul>
   <% @products.each do |product| %>
   <h1><%= link_to product.name, product_path(product) %></h1>
-  <%= product.description %>
-  <%= product.price %>
+  <%= product.description %><br>
+  <%= product.price %><br>
+  <%= product.created_at %><br>
+  <%= product.updated_at %><br>
   <hr>
   <% end %>
 </ul>
