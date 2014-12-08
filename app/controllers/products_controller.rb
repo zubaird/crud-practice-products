@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
 
   def create
     if @product = Product.create(product_params)
-      flash[:notice] = "Product successfully created"
+      flash[:notice] = "Product was created successfully"
       redirect_to product_path(@product)
     end
   end
@@ -25,7 +25,11 @@ class ProductsController < ApplicationController
   end
 
   def update
-
+    @product = Product.find(params[:id])
+    if @product.save
+      flash[:notice] = "Product was updated successfully"
+      redirect_to products_path
+    end
   end
 
 
