@@ -1,0 +1,10 @@
+<ul>
+  <%= @products.each do |product| %>
+  <h1><%= product.name %></h1>
+  <%= product.description %>
+  <%= product.price %>
+  <hr>
+  <% end %>
+</ul>
+
+<%= link_to "Add Product", new_product_path %>
