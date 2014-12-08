@@ -11,6 +11,7 @@ end
 
 def create
   if @product = Product.create(product_params)
+    flash[:notice] = "Product successfully created"
     redirect_to product_path(@product)
   end
 end
